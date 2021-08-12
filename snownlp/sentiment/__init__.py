@@ -12,8 +12,8 @@ from ..classification.bayes import Bayes
 
 data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                          'sentiment.marshal')
-load_userdict("/Users/liumingrui/PycharmProjects/first_try/snownlp/sentiment/分词.txt")
-#set_dictionary('/Users/liumingrui/PycharmProjects/first_try/snownlp/sentiment/分词2.txt')
+load_userdict(os.path.join(os.path.dirname(os.path.abspath(__file__)), '分词.txt'))
+#set_dictionary(os.path.join(os.path.dirname(os.path.abspath(__file__)), '分词2.txt'))
 
 
 class Sentiment(object):
