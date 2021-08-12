@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from snownlp.sentiment.NegationAndDegree import sentiment_score_list
+import os
 import sys
 import gzip
 import marshal
@@ -59,7 +60,7 @@ class Bayes(object):
         self.total = sum(map(lambda x: self.d[x].getsum(), self.d.keys()))
 
     def train(self, data):
-        self.load('sentiment.marshal')
+        self.load(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../sentiment/sentiment.marshal'))
         for d in data:
             c = d[1]
             if c not in self.d:
